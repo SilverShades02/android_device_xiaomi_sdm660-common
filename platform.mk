@@ -28,7 +28,7 @@ PLATFORM_PATH := device/xiaomi/sdm660-common
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-$(call inherit-product, build/target/product/embedded.mk)
+$(call inherit-product-if-exists, build/target/product/embedded.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Overlays
@@ -36,9 +36,9 @@ DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
 
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="taimen-user 9 PQ2A.190405.003 5310204 release-keys"
+	PRIVATE_BUILD_DESC="taimen-user 9 PQ3A.190505.001 5373320 release-keys"
 
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ2A.190405.003/5310204:user/release-keys
+BUILD_FINGERPRINT := google/taimen/taimen:9/PQ3A.190505.001/5373320:user/release-keys
 
 # Platform properties
 $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
@@ -432,6 +432,14 @@ PRODUCT_COPY_FILES += \
 # VR feature
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
+
+# VR
+PRODUCT_PACKAGES += \
+    vr.sdm660
+
+PRODUCT_PACKAGES += \
+    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-service
 
 # Wifi
 PRODUCT_PACKAGES += \

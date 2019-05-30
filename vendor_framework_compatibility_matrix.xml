@@ -48,7 +48,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.display.config</name>
-        <version>1.0-6</version>
+        <version>1.0-8</version>
         <interface>
              <name>IDisplayConfig</name>
              <instance>default</instance>
@@ -254,6 +254,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.iop</name>
+        <version>1.0</version>
         <version>2.0</version>
         <interface>
             <name>IIop</name>
@@ -316,7 +317,7 @@
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <version>1.0</version>
-        <version>2.0</version>
+        <version>2.0-2</version>
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
@@ -465,7 +466,7 @@
    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.data.factory</name>
-        <version>1.0</version>
+        <version>1.0-1</version>
         <interface>
             <name>IFactory</name>
             <instance>default</instance>
@@ -479,6 +480,15 @@
             <instance>default</instance>
         </interface>
     </hal>
+  <hal format="hidl" optional="true">
+      <name>vendor.qti.power.pasrmanager</name>
+      <transport>hwbinder</transport>
+      <version>1.0</version>
+      <interface>
+          <name>IPasrManager</name>
+          <instance>default</instance>
+     </interface>
+  </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.biometrics.fingerprint</name>
         <impl level="generic"></impl>
@@ -535,6 +545,15 @@
         <version>1.0</version>
         <interface>
             <name>IGoodixBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.servicetracker</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IServicetracker</name>
             <instance>default</instance>
         </interface>
     </hal>

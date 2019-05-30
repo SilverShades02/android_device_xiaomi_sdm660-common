@@ -30,7 +30,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.hifi.int_codec=true \
 	persist.vendor.audio.hw.binder.size_kbyte=1024 \
 	persist.vendor.audio.ras.enabled=false \
-	ro.config.media_vol_steps=25 \
+	ro.config.media_vol_steps=15 \
 	ro.config.vc_call_vol_steps=7 \
 	ro.af.client_heap_size_kbyte=7168 \
 	ro.audio.flinger_standbytime_ms=300 \
@@ -55,8 +55,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.audio.use.sw.alac.decoder=true \
 	vendor.audio.use.sw.ape.decoder=true \
 	vendor.fm.a2dp.conc.disabled=true \
-	vendor.voice.path.for.pcm.voip=true
-
+	vendor.voice.path.for.pcm.voip=true \
+	vendor.audio_hal.in_period_size=144 \
+  vendor.audio_hal.period_multiplier=3
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
